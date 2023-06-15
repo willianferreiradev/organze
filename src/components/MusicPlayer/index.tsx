@@ -98,12 +98,8 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
         <p>{musics[currentMusic].name}</p>
         <audio
           id="player"
-          // controls
           src={musics[currentMusic].path}
           onEnded={handleNext}
-          // ref={audioRef}
-          // onLoadedMetadata={onLoadedMetadata}
-          // onEnded={handleNext}
         />
         <S.Slider type="range" value={duration} onChange={() => null} />
         <S.Controls>
