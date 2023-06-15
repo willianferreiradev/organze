@@ -46,6 +46,28 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
     }
   }
 
+  function handlePrev() {
+    const id = document.getElementById('player') as HTMLAudioElement;
+    if (isPlay) {
+      setIsPlay(false);
+      id.pause();
+    }
+
+    const qtd = musics.length;
+    if (currentMusic == 0) {
+      setCurrentMusic(qtd - 1);
+    } else {
+      setCurrentMusic((current) => current - 1);
+    }
+
+    if (isPlay) {
+      setTimeout(() => {
+        setIsPlay(true);
+        id.play();
+      }, 200);
+    }
+  }
+
   function handleNext() {
     const id = document.getElementById('player') as HTMLAudioElement;
     if (isPlay) {
@@ -85,7 +107,7 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
         />
         <S.Slider type="range" value={duration} onChange={() => null} />
         <S.Controls>
-          <img src="..//prev.svg" alt="prev icon" />
+          <img src="..//prev.svg" alt="prev icon" onClick={handlePrev} />
           <img
             src="../play.svg"
             alt="play icon"
