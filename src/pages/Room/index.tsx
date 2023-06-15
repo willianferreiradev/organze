@@ -4,7 +4,7 @@ import { OccasionSelector } from '../../components/OccasionSelector';
 import { useParams } from 'react-router-dom';
 
 import { Room as RoomType, roomsData } from '../../data/baseData';
-import { RoomService } from '../../services/room-service';
+// import { RoomService } from '../../services/room-service';
 
 export function Room() {
   const [active, setActive] = useState('');
