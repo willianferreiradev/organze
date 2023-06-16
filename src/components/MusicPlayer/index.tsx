@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as S from './styles';
+import { RoomService } from '../../services/room-service';
 
 let interval: number;
 
@@ -35,7 +36,7 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
     }
   }, [type]);
 
-  function start() {
+  async function start() {
     const id = document.getElementById('player') as HTMLAudioElement;
     if (!isPlay) {
       setIsPlay(true);
@@ -43,6 +44,7 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
     } else {
       setIsPlay(false);
       id.pause();
+      await RoomService.turnOnAll();
     }
   }
 
