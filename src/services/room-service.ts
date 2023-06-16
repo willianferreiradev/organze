@@ -7,9 +7,9 @@ export const RoomService = {
     );
   },
 
-  async turnOnAll() {
+  async turnOnAll(id: number) {
     return axios.get(
-      `http://793434.homemanager.com.br:9090/HomeWeb/command.do?valor=X&id=104`
+      `http://793434.homemanager.com.br:9090/HomeWeb/command.do?valor=X&id=${id}`
     );
   },
 };

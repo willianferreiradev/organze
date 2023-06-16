@@ -8,10 +8,12 @@ import { RoomService } from '../../services/room-service';
 
 export function Room() {
   const [active, setActive] = useState('');
+  const [sceneId, setSceneId] = useState(0);
 
   const { id } = useParams();
 
   const room = roomsData[`SALA${id}`.toUpperCase()] as RoomType;
+  const turnOnAllId = room.turnOnAll;
 
   async function handleChangeType(type: string) {
     setActive(type);
@@ -21,6 +23,7 @@ export function Room() {
       ?.filter((item) => typeof item == 'number')
       .find((item) => item) as number;
 
+    setSceneId(id);
     try {
       await RoomService.turnOn(id);
     } catch (e) {
@@ -31,7 +34,12 @@ export function Room() {
   return (
     <>
       <OccasionSelector active={active} onChangeType={handleChangeType} />
-      <MusicPlayer type={active} musics={room.musics} />
+      <MusicPlayer
+        type={active}
+        musics={room.musics}
+        turnOnAllId={turnOnAllId}
+        sceneId={sceneId}
+      />
     </>
   );
 }

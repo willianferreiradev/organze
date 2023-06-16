@@ -7,9 +7,16 @@ let interval: number;
 type MusicPlayerProps = {
   type: string;
   musics: { name: string; path: string }[];
+  turnOnAllId: number;
+  sceneId: number;
 };
 
-export function MusicPlayer({ type, musics }: MusicPlayerProps) {
+export function MusicPlayer({
+  type,
+  turnOnAllId,
+  sceneId,
+  musics,
+}: MusicPlayerProps) {
   const [isPlay, setIsPlay] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentMusic, setCurrentMusic] = useState(0);
@@ -41,10 +48,11 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
     if (!isPlay) {
       setIsPlay(true);
       id.play();
+      await RoomService.turnOn(sceneId);
     } else {
       setIsPlay(false);
       id.pause();
-      await RoomService.turnOnAll();
+      await RoomService.turnOnAll(turnOnAllId);
     }
   }
 
@@ -107,7 +115,7 @@ export function MusicPlayer({ type, musics }: MusicPlayerProps) {
         <S.Controls>
           <img src="..//prev.svg" alt="prev icon" onClick={handlePrev} />
           <img
-            src="../play.svg"
+            src={isPlay ? '../pause.svg' : '../play.svg'}
             alt="play icon"
             className="play"
             onClick={start}
