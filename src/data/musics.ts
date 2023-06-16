@@ -15,7 +15,7 @@ export const baseMusics = [
 
 export const brideMusics = [
   {
-    name: 'Jogar com você - Johnny Menezes',
+    name: 'Marcha Nupcial',
     path: '/playlists/noiva.mp3',
   },
 ];
