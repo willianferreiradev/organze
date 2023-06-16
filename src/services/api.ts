@@ -4,7 +4,7 @@ const config = {
   headers: {
     'Content-Type': 'text/plain',
   },
-  baseURL: '793434.homemanager.com.br:9090/HomeWeb/command.do',
+  baseURL: 'http://192.168.100.220:9090/HomeWeb/command.do',
 };
 
 const api = axios.create(config);

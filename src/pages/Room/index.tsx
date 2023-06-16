@@ -8,6 +8,7 @@ import { RoomService } from '../../services/room-service';
 
 export function Room() {
   const [active, setActive] = useState('');
+  const [isChanged, setIsChanged] = useState(false);
   const [sceneId, setSceneId] = useState(0);
 
   const { id } = useParams();
@@ -17,6 +18,7 @@ export function Room() {
 
   async function handleChangeType(type: string) {
     setActive(type);
+    setIsChanged((value) => !value);
 
     const id = Object.entries(room)
       .find((room) => type == room[0])
@@ -39,6 +41,7 @@ export function Room() {
         musics={room.musics}
         turnOnAllId={turnOnAllId}
         sceneId={sceneId}
+        isChanged={isChanged}
       />
     </>
   );

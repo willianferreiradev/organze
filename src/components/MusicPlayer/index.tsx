@@ -9,6 +9,7 @@ type MusicPlayerProps = {
   musics: { name: string; path: string }[];
   turnOnAllId: number;
   sceneId: number;
+  isChanged: boolean;
 };
 
 export function MusicPlayer({
@@ -16,6 +17,7 @@ export function MusicPlayer({
   turnOnAllId,
   sceneId,
   musics,
+  isChanged,
 }: MusicPlayerProps) {
   const [isPlay, setIsPlay] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -35,13 +37,14 @@ export function MusicPlayer({
   }, [isPlay]);
 
   useEffect(() => {
+    console.log(type);
     if (type) {
       const id = document.getElementById('player') as HTMLAudioElement;
       id.currentTime = 0;
       id.play();
       setIsPlay(true);
     }
-  }, [type]);
+  }, [isChanged, type]);
 
   async function start() {
     const id = document.getElementById('player') as HTMLAudioElement;
