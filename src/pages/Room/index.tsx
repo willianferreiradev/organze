@@ -4,7 +4,7 @@ import { OccasionSelector } from '../../components/OccasionSelector';
 import { useParams } from 'react-router-dom';
 
 import { Room as RoomType, roomsData } from '../../data/baseData';
-// import { RoomService } from '../../services/room-service';
+import { RoomService } from '../../services/room-service';
 
 export function Room() {
   const [active, setActive] = useState('');
@@ -16,16 +16,16 @@ export function Room() {
   async function handleChangeType(type: string) {
     setActive(type);
 
-    // const id = Object.entries(room)
-    //   .find((room) => type == room[0])
-    //   ?.filter((item) => typeof item == 'number')
-    //   .find((item) => item) as number;
+    const id = Object.entries(room)
+      .find((room) => type == room[0])
+      ?.filter((item) => typeof item == 'number')
+      .find((item) => item) as number;
 
-    // try {
-    //   await RoomService.turnOn(id);
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    try {
+      await RoomService.turnOn(id);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   return (
