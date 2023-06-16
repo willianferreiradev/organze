@@ -41,7 +41,7 @@ export const roomsData = {
     musics: brideMusics,
     party: 0,
     waltz: 0,
-    parade: 192,
+    parade: 194,
     turnOnAll: 111,
   },
 } as Record<string, Room>;
