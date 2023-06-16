@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const config = {
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'text/plain',
   },
   baseURL: '793434.homemanager.com.br:9090/HomeWeb/command.do',
 };

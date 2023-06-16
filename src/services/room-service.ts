@@ -1,7 +1,9 @@
-import api from './api';
+import axios from 'axios';
 
 export const RoomService = {
   async turnOn(id: number) {
-    return api.get(`valor=X&id=${id}`);
+    return axios.get(
+      `http://793434.homemanager.com.br:9090/HomeWeb/command.do?valor=X&id=${id}`
+    );
   },
 };
