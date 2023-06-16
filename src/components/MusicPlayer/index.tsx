@@ -41,8 +41,10 @@ export function MusicPlayer({
     if (type) {
       const id = document.getElementById('player') as HTMLAudioElement;
       id.currentTime = 0;
-      id.play();
-      setIsPlay(true);
+      setTimeout(() => {
+        id.play();
+        setIsPlay(true);
+      }, 2000);
     }
   }, [isChanged, type]);
 
