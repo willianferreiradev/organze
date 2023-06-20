@@ -12,6 +12,12 @@ type MusicPlayerProps = {
   isChanged: boolean;
 };
 
+const types = [
+  { value: 'party', image: '../party.svg', text: 'Festa' },
+  { value: 'waltz', image: '../waltz.svg', text: 'Valsa' },
+  { value: 'parade', image: '../parade.svg', text: 'Desfile' },
+];
+
 export function MusicPlayer({
   type,
   turnOnAllId,
@@ -61,73 +67,34 @@ export function MusicPlayer({
     }
   }
 
-  function handlePrev() {
-    const id = document.getElementById('player') as HTMLAudioElement;
-    if (isPlay) {
-      setIsPlay(false);
-      id.pause();
-    }
-
-    const qtd = musics.length;
-    if (currentMusic == 0) {
-      setCurrentMusic(qtd - 1);
-    } else {
-      setCurrentMusic((current) => current - 1);
-    }
-
-    if (isPlay) {
-      setTimeout(() => {
-        setIsPlay(true);
-        id.play();
-      }, 200);
-    }
-  }
-
-  function handleNext() {
-    const id = document.getElementById('player') as HTMLAudioElement;
-    if (isPlay) {
-      setIsPlay(false);
-      id.pause();
-    }
-
-    const qtd = musics.length;
-    if (currentMusic == qtd - 1) {
-      setCurrentMusic(0);
-    } else {
-      setCurrentMusic((current) => current + 1);
-    }
-
-    if (isPlay) {
-      setTimeout(() => {
-        setIsPlay(true);
-        id.play();
-      }, 200);
-    }
-  }
-
   return (
     <S.Container>
-      <h3>Playlist</h3>
+      <h3>Ocasião</h3>
 
-      <S.Player>
-        <p>{musics[currentMusic].name}</p>
-        <audio
-          id="player"
-          src={musics[currentMusic].path}
-          onEnded={handleNext}
-        />
-        <S.Slider type="range" value={duration} onChange={() => null} />
-        <S.Controls>
-          <img src="..//prev.svg" alt="prev icon" onClick={handlePrev} />
-          <img
-            src={isPlay ? '../pause.svg' : '../play.svg'}
-            alt="play icon"
-            className="play"
-            onClick={start}
-          />
-          <img src="../next.svg" alt="next icon" onClick={handleNext} />
-        </S.Controls>
-      </S.Player>
+      <S.CardBody>
+        <S.OccastionContainer>
+          {types.map((type) => (
+            <S.Selector key={type.value}>
+              <img src={`${type.image}`} alt={`${type.value} icon`} />
+              <label>{type.text}</label>
+            </S.Selector>
+          ))}
+        </S.OccastionContainer>
+
+        <S.Player>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            <img
+              src={isPlay ? '../pause.svg' : '../play.svg'}
+              alt="play icon"
+              className="play"
+              onClick={start}
+            />
+            <p>{musics[currentMusic].name}</p>
+          </div>
+          <audio id="player" src={musics[currentMusic].path} />
+          <S.Slider type="range" value={duration} onChange={() => null} />
+        </S.Player>
+      </S.CardBody>
     </S.Container>
   );
 }

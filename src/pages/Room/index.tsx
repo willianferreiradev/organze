@@ -35,7 +35,7 @@ export function Room() {
 
   return (
     <>
-      <OccasionSelector active={active} onChangeType={handleChangeType} />
+      {/* <OccasionSelector active={active} onChangeType={handleChangeType} /> */}
       <MusicPlayer
         type={active}
         musics={room.musics}

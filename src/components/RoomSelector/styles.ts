@@ -7,10 +7,9 @@ type SelectorsProps = {
 const activeColor = 'rgba(255, 122, 0, 0.13)';
 
 export const Container = styled.section`
-  background-color: #e6e6e6;
-  border-radius: 10px;
-
+  background: var(--background-card);
   padding: 0.5rem 0 2rem 0;
+  border-radius: 10px;
 
   > h3 {
     font-style: normal;
@@ -18,6 +17,7 @@ export const Container = styled.section`
     font-size: 24px;
     line-height: 60px;
     text-align: center;
+    color: #ffffff;
   }
 
   > div {
@@ -44,7 +44,12 @@ export const Selector = styled.div<SelectorsProps>`
   border-radius: 10px;
 
   padding: 2rem;
-  background: ${({ active }) => (active ? activeColor : 'white')};
+  background: var(--background);
+  color: #ffffff;
+
+  &:active {
+    background: rgba(255, 122, 0, 0.13);
+  }
 
   > img {
     width: 50px;

@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  background-color: #e6e6e6;
+  background: var(--background-card);
   border-radius: 10px;
 
   padding: 0.5rem 4rem 2rem 4rem;
+
+  min-height: 80%;
+  color: #ffffff;
 
   > h3 {
     font-style: normal;
@@ -13,11 +16,25 @@ export const Container = styled.section`
     line-height: 60px;
     text-align: center;
   }
+
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CardBody = styled.div`
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex: 1;
 `;
 
 export const Slider = styled.input`
   width: 100%;
   background-color: red;
+  margin-top: 1rem;
 
   overflow: hidden;
   appearance: none;
@@ -50,9 +67,25 @@ export const Slider = styled.input`
   } */
 `;
 
+export const OccastionContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  padding: 0 4rem;
+  justify-content: flex-start;
+`;
+
 export const Player = styled.div`
-  > p {
+  width: 100%;
+  p {
     text-align: center;
+    color: #b7b7b7;
+    font-size: 1.2rem;
+  }
+
+  img.play {
+    width: 20px;
+    cursor: pointer;
   }
 `;
 
@@ -70,7 +103,34 @@ export const Controls = styled.div`
   }
 
   > img.play {
-    width: 50px;
+    width: 20px;
     cursor: pointer;
+  }
+`;
+
+export const Selector = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+
+  height: 150px;
+  width: 150px;
+
+  border: 2px solid #ff7a00;
+  border-radius: 10px;
+
+  padding: 2rem;
+
+  > img {
+    width: 50px;
+    /* padding-top: 1rem; */
+  }
+
+  > label {
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 `;
