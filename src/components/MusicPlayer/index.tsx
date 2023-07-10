@@ -8,7 +8,7 @@ let interval: number;
 
 type MusicPlayerProps = {
   type: string;
-  musics: { name: string; path: string }[];
+  musics: { name: string; path: string; delay: number; scene?: number }[];
   turnOnAllId: number;
   sceneId: number;
   isChanged: boolean;
@@ -79,11 +79,16 @@ export function MusicPlayer({
     id.pause();
     id.currentTime = 0;
     setDuration(0);
+    if (musics[currentMusic]?.scene) {
+      const scene = musics[currentMusic].scene as number;
+      await RoomService.turnOn(scene);
+    } else {
+      await RoomService.turnOn(sceneId);
+    }
     setTimeout(() => {
       setIsPlay(true);
       id.play();
-    }, 2000);
-    await RoomService.turnOn(sceneId);
+    }, musics[currentMusic].delay);
   }
 
   if (!id) {
