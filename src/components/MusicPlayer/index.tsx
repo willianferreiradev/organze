@@ -90,7 +90,7 @@ export function MusicPlayer({
     setTimeout(() => {
       setIsPlay(true);
       id.play();
-    }, musics[currentMusic].delay);
+    }, current.delay);
   }
 
   if (!id) {
