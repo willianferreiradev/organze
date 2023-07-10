@@ -25,12 +25,12 @@ export const Container = styled.section`
   flex-direction: column;
 
   @media (max-width: 1542px) {
-    padding: 1.7rem 3rem 2rem 3rem;
+    padding: 1.2rem 3rem 2rem 3rem;
   }
 `;
 
 export const CardBody = styled.div`
-  padding-top: 2rem;
+  padding-top: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
