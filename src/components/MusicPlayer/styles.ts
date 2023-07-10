@@ -91,7 +91,7 @@ export const OccastionContainer = styled.div`
 
 export const Player = styled.div`
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 1rem;
   p {
     text-align: center;
     color: #b7b7b7;
