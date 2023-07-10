@@ -4,7 +4,7 @@ export const Container = styled.section`
   background: var(--background-card);
   border-radius: 10px;
 
-  padding: 0.5rem 4rem 2rem 4rem;
+  padding: 1.7rem 4rem 2rem 4rem;
 
   min-height: 80%;
   color: #ffffff;
@@ -12,13 +12,17 @@ export const Container = styled.section`
   > h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.8rem;
     line-height: 60px;
     text-align: center;
   }
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1542px) {
+    padding: 1.7rem 3rem 2rem 3rem;
+  }
 `;
 
 export const CardBody = styled.div`
@@ -70,9 +74,15 @@ export const Slider = styled.input`
 export const OccastionContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 4rem;
   padding: 0 4rem;
-  justify-content: flex-start;
+  justify-content: center;
+
+  @media (max-width: 1542px) {
+    gap: 2rem;
+    padding: 0 2rem;
+  }
 `;
 
 export const Player = styled.div`
@@ -116,8 +126,8 @@ export const Selector = styled.div`
   gap: 1rem;
   cursor: pointer;
 
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 
   border: 2px solid #ff7a00;
   border-radius: 10px;
@@ -131,6 +141,7 @@ export const Selector = styled.div`
 
   > label {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
   }
 `;

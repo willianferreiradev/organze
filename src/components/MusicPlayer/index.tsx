@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import * as S from './styles';
 import { RoomService } from '../../services/room-service';
+import { useParams } from 'react-router-dom';
+import { roomMapper } from '../../data/roomMapper';
 
 let interval: number;
 
@@ -28,6 +30,7 @@ export function MusicPlayer({
   const [isPlay, setIsPlay] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentMusic, setCurrentMusic] = useState(0);
+  const { id } = useParams();
 
   useEffect(() => {
     setDuration(0);
@@ -67,16 +70,27 @@ export function MusicPlayer({
     }
   }
 
+  function handleClick(index: number) {
+    setCurrentMusic(index);
+    setIsPlay(false);
+    const id = document.getElementById('player') as HTMLAudioElement;
+    id.pause();
+  }
+
+  if (!id) {
+    return <></>;
+  }
+
   return (
     <S.Container>
-      <h3>Ocasião</h3>
+      <h3>Cenas - {roomMapper[id]}</h3>
 
       <S.CardBody>
         <S.OccastionContainer>
-          {types.map((type) => (
-            <S.Selector key={type.value}>
-              <img src={`${type.image}`} alt={`${type.value} icon`} />
-              <label>{type.text}</label>
+          {musics.map((music, index) => (
+            <S.Selector key={music.name} onClick={() => handleClick(index)}>
+              <img src="../party.svg" alt={`icon`} />
+              <label>{music.name}</label>
             </S.Selector>
           ))}
         </S.OccastionContainer>
