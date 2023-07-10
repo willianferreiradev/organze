@@ -63,7 +63,7 @@ export const brideMusics = [
   {
     name: 'Marcha nupcial',
     path: '/playlists/brides/4.mp3',
-    delay: 2000,
+    delay: 4000,
     scene: 194,
   },
   {
