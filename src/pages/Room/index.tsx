@@ -14,7 +14,7 @@ export function Room() {
       musics={room.musics}
       turnOnAllId={turnOnAllId}
       sceneId={room.scene}
-      icon={id == 'noivas' ? '../parade.svg' : '../party.svg'}
+      icon={id == 'noivas' ? '../waltz.svg' : '../party.svg'}
     />
   );
 }
