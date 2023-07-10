@@ -45,7 +45,7 @@ export const brideMusics = [
   {
     name: 'A thousand years',
     path: '/playlists/brides/1.mp3',
-    delay: 0,
+    delay: 1000,
     scene: 199,
   },
   {
