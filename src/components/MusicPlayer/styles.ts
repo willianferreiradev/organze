@@ -6,7 +6,6 @@ export const Container = styled.section`
 
   padding: 1.7rem 4rem 2rem 4rem;
 
-  min-height: 80%;
   color: #ffffff;
 
   > h3 {
@@ -91,6 +90,7 @@ export const OccastionContainer = styled.div`
 
 export const Player = styled.div`
   width: 100%;
+  margin-top: 3rem;
   p {
     text-align: center;
     color: #b7b7b7;

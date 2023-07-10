@@ -74,17 +74,19 @@ export function MusicPlayer({
 
   async function handleClick(index: number) {
     setCurrentMusic(index);
+    const current = musics[index];
     const id = document.getElementById('player') as HTMLAudioElement;
     setIsPlay(false);
     id.pause();
     id.currentTime = 0;
     setDuration(0);
-    if (musics[currentMusic]?.scene) {
-      const scene = musics[currentMusic].scene as number;
+    if (current.scene) {
+      const scene = current.scene as number;
       await RoomService.turnOn(scene);
     } else {
       await RoomService.turnOn(sceneId);
     }
+    console.log(musics[currentMusic].delay);
     setTimeout(() => {
       setIsPlay(true);
       id.play();
