@@ -81,7 +81,7 @@ export const OccastionContainer = styled.div`
 
   @media (max-width: 1542px) {
     gap: 2rem;
-    padding: 0 7rem;
+    padding: 0 8rem;
   }
 `;
 
@@ -130,8 +130,8 @@ export const Selector = styled.div`
   width: 175px;
 
   @media (max-width: 1366px) {
-    height: 160px;
-    width: 160px;
+    height: 150px;
+    width: 150px;
   }
 
   border: 2px solid #ff7a00;
@@ -141,6 +141,11 @@ export const Selector = styled.div`
 
   > img {
     width: 50px;
+
+    @media (max-width: 1366px) {
+      width: 35px;
+    }
+
     /* padding-top: 1rem; */
   }
 
@@ -148,5 +153,8 @@ export const Selector = styled.div`
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
+    @media (max-width: 1366px) {
+      font-size: 0.8rem;
+    }
   }
 `;
