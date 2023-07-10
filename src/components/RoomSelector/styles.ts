@@ -4,8 +4,6 @@ type SelectorsProps = {
   active?: boolean;
 };
 
-const activeColor = 'rgba(255, 122, 0, 0.13)';
-
 export const Container = styled.section`
   background: var(--background-card);
   padding: 0.5rem 0 2rem 0;
@@ -53,7 +51,6 @@ export const Selector = styled.div<SelectorsProps>`
 
   > img {
     width: 50px;
-    /* padding-top: 1rem; */
   }
 
   > label {

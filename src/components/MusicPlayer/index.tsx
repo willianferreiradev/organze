@@ -6,26 +6,25 @@ import { roomMapper } from '../../data/roomMapper';
 
 let interval: number;
 
-type MusicPlayerProps = {
-  type: string;
-  musics: { name: string; path: string; delay: number; scene?: number }[];
-  turnOnAllId: number;
-  sceneId: number;
-  isChanged: boolean;
+type Music = {
+  name: string;
+  path: string;
+  delay: number;
+  scene?: number;
 };
 
-const types = [
-  { value: 'party', image: '../party.svg', text: 'Festa' },
-  { value: 'waltz', image: '../waltz.svg', text: 'Valsa' },
-  { value: 'parade', image: '../parade.svg', text: 'Desfile' },
-];
+type MusicPlayerProps = {
+  musics: Music[];
+  turnOnAllId: number;
+  sceneId: number;
+  icon: string;
+};
 
 export function MusicPlayer({
-  type,
   turnOnAllId,
   sceneId,
   musics,
-  isChanged,
+  icon = '../party.svg',
 }: MusicPlayerProps) {
   const [isPlay, setIsPlay] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -46,18 +45,6 @@ export function MusicPlayer({
       clearInterval(interval);
     }
   }, [isPlay]);
-
-  useEffect(() => {
-    console.log(type);
-    if (type) {
-      const id = document.getElementById('player') as HTMLAudioElement;
-      id.currentTime = 0;
-      setTimeout(() => {
-        id.play();
-        setIsPlay(true);
-      }, 2000);
-    }
-  }, [isChanged, type]);
 
   async function start() {
     const id = document.getElementById('player') as HTMLAudioElement;
@@ -105,7 +92,7 @@ export function MusicPlayer({
         <S.OccastionContainer>
           {musics.map((music, index) => (
             <S.Selector key={music.name} onClick={() => handleClick(index)}>
-              <img src="../party.svg" alt={`icon`} />
+              <img src={icon} alt={`icon`} />
               <label>{music.name}</label>
             </S.Selector>
           ))}
