@@ -80,17 +80,17 @@ export function MusicPlayer({
     id.pause();
     id.currentTime = 0;
     setDuration(0);
+    setTimeout(() => {
+      setIsPlay(true);
+      id.play();
+    }, current.delay);
+
     if (current.scene) {
       const scene = current.scene as number;
       await RoomService.turnOn(scene);
     } else {
       await RoomService.turnOn(sceneId);
     }
-    console.log(musics[currentMusic].delay);
-    setTimeout(() => {
-      setIsPlay(true);
-      id.play();
-    }, current.delay);
   }
 
   if (!id) {
