@@ -51,7 +51,7 @@ export const brideMusics = [
   {
     name: 'Perfect',
     path: '/playlists/brides/2.mp3',
-    delay: 2000,
+    delay: 0,
     scene: 197,
   },
   {
