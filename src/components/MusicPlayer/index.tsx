@@ -83,7 +83,7 @@ export function MusicPlayer({
       setIsPlay(true);
       id.play();
     }, 100);
-    await RoomService.turnOn(sceneId);
+    // await RoomService.turnOn(sceneId);
   }
 
   if (!id) {
