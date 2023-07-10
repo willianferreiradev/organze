@@ -38,7 +38,9 @@ export function MusicPlayer({
       interval = setInterval(() => {
         const id = document.getElementById('player') as HTMLAudioElement;
         const a = (id.currentTime * 100) / id.duration;
-        setDuration(a);
+        if (typeof a == 'number') {
+          setDuration(a);
+        }
       }, 1000);
     } else {
       clearInterval(interval);
@@ -72,9 +74,15 @@ export function MusicPlayer({
 
   async function handleClick(index: number) {
     setCurrentMusic(index);
-    setIsPlay(true);
     const id = document.getElementById('player') as HTMLAudioElement;
-    id.play();
+    setIsPlay(false);
+    id.pause();
+    id.currentTime = 0;
+    setDuration(0);
+    setTimeout(() => {
+      setIsPlay(true);
+      id.play();
+    }, 100);
     await RoomService.turnOn(sceneId);
   }
 

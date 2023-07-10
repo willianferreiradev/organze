@@ -5,31 +5,31 @@ export const baseMusics = [
   },
   {
     name: 'Roça em mim',
-    path: '/playlists/romms/2.mp3',
+    path: '/playlists/rooms/2.mp3',
   },
   {
     name: 'Zona de perigo',
-    path: '/playlists/romms/3.mp3',
+    path: '/playlists/rooms/3.mp3',
   },
   {
     name: 'Vai novinha',
-    path: '/playlists/romms/4.mp3',
+    path: '/playlists/rooms/4.mp3',
   },
   {
     name: 'Gol bolinha',
-    path: '/playlists/romms/5.mp3',
+    path: '/playlists/rooms/5.mp3',
   },
   {
     name: 'A thousand years',
-    path: '/playlists/romms/6.mp3',
+    path: '/playlists/rooms/6.mp3',
   },
   {
     name: 'Perfect',
-    path: '/playlists/romms/7.mp3',
+    path: '/playlists/rooms/7.mp3',
   },
   {
     name: 'Ta ok',
-    path: '/playlists/romms/8.mp3',
+    path: '/playlists/rooms/8.mp3',
   },
 ];
 
