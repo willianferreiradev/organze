@@ -9,12 +9,12 @@ export type Room = {
 export const roomsData = {
   SALA1: {
     musics: baseMusics,
-    scene: 169,
+    scene: 118,
     turnOnAll: 104,
   },
   SALA2: {
     musics: baseMusics,
-    scene: 169,
+    scene: 167,
     turnOnAll: 106,
   },
   SALA3: {
