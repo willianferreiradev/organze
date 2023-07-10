@@ -82,7 +82,7 @@ export function MusicPlayer({
     setTimeout(() => {
       setIsPlay(true);
       id.play();
-    }, 100);
+    }, 2000);
     await RoomService.turnOn(sceneId);
   }
 
