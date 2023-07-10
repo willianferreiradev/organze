@@ -81,7 +81,7 @@ export const OccastionContainer = styled.div`
 
   @media (max-width: 1542px) {
     gap: 2rem;
-    padding: 0 2rem;
+    padding: 0 7rem;
   }
 `;
 
@@ -128,6 +128,11 @@ export const Selector = styled.div`
 
   height: 175px;
   width: 175px;
+
+  @media (max-width: 1366px) {
+    height: 160px;
+    width: 160px;
+  }
 
   border: 2px solid #ff7a00;
   border-radius: 10px;
