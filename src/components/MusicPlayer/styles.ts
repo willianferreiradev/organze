@@ -82,6 +82,7 @@ export const OccastionContainer = styled.div`
   gap: 4rem;
   padding: 0 4rem;
   justify-content: center;
+  cursor: pointer;
 
   @media (max-width: 1542px) {
     gap: 2rem;
