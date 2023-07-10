@@ -15,6 +15,10 @@ export const Container = styled.section`
     font-size: 1.8rem;
     line-height: 60px;
     text-align: center;
+
+    @media (max-width: 1366px) {
+      font-size: 1.5rem;
+    }
   }
 
   display: flex;
@@ -130,8 +134,8 @@ export const Selector = styled.div`
   width: 175px;
 
   @media (max-width: 1366px) {
-    height: 150px;
-    width: 150px;
+    height: 145px;
+    width: 145px;
   }
 
   border: 2px solid #ff7a00;
@@ -154,7 +158,7 @@ export const Selector = styled.div`
     font-size: 1rem;
     text-align: center;
     @media (max-width: 1366px) {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   }
 `;
