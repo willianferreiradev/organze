@@ -82,7 +82,6 @@ export const OccastionContainer = styled.div`
   gap: 4rem;
   padding: 0 4rem;
   justify-content: center;
-  cursor: pointer;
 
   @media (max-width: 1542px) {
     gap: 2rem;
@@ -158,6 +157,7 @@ export const Selector = styled.div`
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
+    cursor: pointer;
     @media (max-width: 1366px) {
       font-size: 0.9rem;
     }
