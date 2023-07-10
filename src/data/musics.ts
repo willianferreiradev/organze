@@ -69,7 +69,7 @@ export const brideMusics = [
   {
     name: 'Hallelujah',
     path: '/playlists/brides/5.mp3',
-    delay: 2000,
+    delay: 0,
     scene: 196,
   },
 ];
