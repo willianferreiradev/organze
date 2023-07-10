@@ -71,11 +71,10 @@ export function MusicPlayer({
   }
 
   async function handleClick(index: number) {
-    // setCurrentMusic(index);
-    // setIsPlay(true);
-    // const id = document.getElementById('player') as HTMLAudioElement;
-    // id.play();
-    console.log(sceneId);
+    setCurrentMusic(index);
+    setIsPlay(true);
+    const id = document.getElementById('player') as HTMLAudioElement;
+    id.play();
     await RoomService.turnOn(sceneId);
   }
 

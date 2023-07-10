@@ -40,7 +40,7 @@ export function Room() {
         type={active}
         musics={room.musics}
         turnOnAllId={turnOnAllId}
-        sceneId={sceneId}
+        sceneId={room.parade}
         isChanged={isChanged}
       />
     </>
