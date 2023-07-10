@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   background: var(--background-card);
+  background: black;
   border-radius: 10px;
 
   padding: 1.7rem 4rem 2rem 4rem;

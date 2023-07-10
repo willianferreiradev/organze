@@ -5,7 +5,8 @@ type SelectorsProps = {
 };
 
 export const Container = styled.section`
-  background: var(--background-card);
+  /* background: var(--background-card); */
+  background: black;
   padding: 0.5rem 0 2rem 0;
   border-radius: 10px;
 
