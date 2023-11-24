@@ -1,15 +1,18 @@
-import { Header } from './components/Header';
+// import { Header } from './components/Header';
 
-import * as S from './styles';
-import { Outlet } from 'react-router-dom';
+// import * as S from './styles';
+// import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Header />
+      <div>
+        <h1 style={{ color: 'white' }}> app</h1>
+      </div>
+      {/* <Header />
       <S.Container>
         <Outlet />
-      </S.Container>
+      </S.Container> */}
     </>
   );
 }
