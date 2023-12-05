@@ -1,4 +1,4 @@
 git pull origin main
-yarn
+npm install
 start chrome
 npm run dev
