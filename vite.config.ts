@@ -7,7 +7,4 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [react()],
-  commonjsOptions: {
-    esmExternals: true,
-  },
 });

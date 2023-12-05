@@ -1,41 +1,41 @@
 export const baseMusics = [
   {
-    name: 'Pipoco',
+    name: 'A thousand years',
     path: '/playlists/rooms/1.mp3',
     delay: 100,
   },
   {
-    name: 'Roça em mim',
+    name: 'Perfect',
     path: '/playlists/rooms/2.mp3',
     delay: 100,
   },
   {
-    name: 'Zona de perigo',
+    name: 'Photograph',
     path: '/playlists/rooms/3.mp3',
     delay: 100,
   },
   {
-    name: 'Vai novinha',
+    name: 'Vejo enfim a luz brilhar',
     path: '/playlists/rooms/4.mp3',
     delay: 100,
   },
   {
-    name: 'Gol bolinha',
+    name: 'Shake it off',
     path: '/playlists/rooms/5.mp3',
     delay: 100,
   },
   {
-    name: 'A thousand years',
+    name: 'Feel so close',
     path: '/playlists/rooms/6.mp3',
     delay: 100,
   },
   {
-    name: 'Perfect',
+    name: 'Papas',
     path: '/playlists/rooms/7.mp3',
     delay: 100,
   },
   {
-    name: 'Ta ok',
+    name: 'Vou mandar o grave bater',
     path: '/playlists/rooms/8.mp3',
     delay: 100,
   },
